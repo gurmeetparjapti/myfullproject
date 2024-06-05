@@ -1,0 +1,18 @@
+.err{
+    color: red;
+}
+.mylobby{
+    background: linear-gradient(80deg, red, white,rgb(161, 157, 157));;
+}
+@media(max-width:600px) {
+    .mylobby{
+        background: linear-gradient(80deg, red, white,rgb(161, 157, 157));;  
+      }
+      .formsabel{
+        width: 405px;
+      }
+
+}
+.row{
+width: -webkit-fill-available;
+}

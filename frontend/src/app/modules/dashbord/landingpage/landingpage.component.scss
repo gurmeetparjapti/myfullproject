@@ -1,0 +1,48 @@
+//carasuel
+.carousel-caption {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+}
+
+.carousel-caption>p {
+    color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (max-width: 500px) {
+
+    .carousel-caption>.content {
+        position: absolute;
+        top: 0px;
+    }
+    .carousel-caption>.content>p,button{
+       display: none;
+    }
+  
+    p {
+        margin: 0;
+    }
+
+    .carousel-item>img {
+        height: 220px;
+    }
+}
+
+.content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+p{
+    font-size: 100%;
+    font-weight: inherit;
+    font-style: inherit;
+}

@@ -1,0 +1,43 @@
+<form action="" [formGroup]="myform" (ngSubmit)="mysubmit()" class="p-3">
+    <mat-card >
+        <mat-card-content>
+            
+            <mat-form-field class="mat-50">
+                <mat-label>E-mail</mat-label>
+                    <input matInput formControlName="email" required >
+            </mat-form-field>
+            <mat-form-field class="mat-50">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="pass" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+        </mat-card-content>
+        <mat-card-footer>
+            <br>
+            <section class="justify-content-center row">
+                  <button mat-button  class="bg-primary text-white col-4">Login</button>
+              </section>
+              <br>
+              <div class="text-center">
+                <p>Not a member? <a [routerLink]="['../../auth/register']">Register</a></p>
+                <p>or sign up with:</p>
+                <button type="button" class="btn btn-secondary btn-floating mx-1">
+                    <i class="fa fa-facebook-f"></i>
+                </button>
+
+                <button type="button" class="btn btn-secondary btn-floating mx-1">
+                    <i class="fa fa-google"></i>
+                </button>
+                <button type="button" class="btn btn-secondary btn-floating mx-1">
+                    <i class="fa fa-twitter"></i>
+                </button>
+                <button type="button" class="btn btn-secondary btn-floating mx-1">
+                    <i class="fa fa-github"></i>
+                </button>
+            </div>
+            <br>
+        </mat-card-footer>
+    </mat-card>
+</form>

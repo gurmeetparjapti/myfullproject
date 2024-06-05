@@ -1,0 +1,128 @@
+<mat-sidenav-container class="sidenav-container">
+   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+      <mat-toolbar class="mt-4"><img src="../../.././assets/image/d862860d-3f6c-41c2-a690-f60bebe6d7a1 logo.jpeg" alt="" srcset="" height="100px" ></mat-toolbar>
+      <mat-nav-list class="mt-4">
+         <a mat-list-item routerLink="/dashboard"><i class="fa fa-home me-1" aria-hidden="true"></i>Home</a>
+         <mat-expansion-panel class="mt-2">
+            <mat-expansion-panel-header>
+               <mat-panel-title><i class="fa fa-sign-in me-1" aria-hidden="true"></i>Event</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+               <a mat-list-item routerLink="/auth"><i class="fa fa-sign-in me-1 " aria-hidden="true"></i>login</a>
+            </mat-nav-list>
+         </mat-expansion-panel>
+         <a mat-list-item routerLink="/dashboard"><i class="fa fa-dashboard" aria-hidden="true"></i> dashboard</a>
+
+         <a mat-list-item routerLink="apidata"><i class="fa fa-globe me-1" aria-hidden="true"></i>Api_data</a>
+         <mat-expansion-panel class="mt-2">
+            <mat-expansion-panel-header>
+               <mat-panel-title><i class="fa fa-tachometer" aria-hidden="true"></i>Dropdown</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+               <a mat-list-item> <i class="fa fa-pie-chart me-2"
+                     aria-hidden="true"></i>Analytics</a>
+               <a mat-list-item  routerLink="blog"><i class="fa fa-rss-square me-2" aria-hidden="true"></i>
+                  Blog's</a>
+               <a mat-list-item routerLink="contact"><i class="fa fa-address-card" aria-hidden="true"></i>Contact-us</a>
+
+            </mat-nav-list>
+         </mat-expansion-panel>
+         <a mat-list-item routerLink="carrer" class="link"><i class="fa fa-calendar-o me-1"
+               aria-hidden="true"></i>Career <span class="badge text-bg-info  ms-5">new</span></a>
+         <a mat-list-item routerLink="/indexpage" class="link"><i class="fa fa-comments me-1"
+               aria-hidden="true"></i>Other-app</a>
+      </mat-nav-list>
+   </mat-sidenav>
+   <mat-sidenav-content>
+      <mat-toolbar color="primary">
+         <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+            *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+         </button>
+         <span> <mat-icon class="m-0">eco</mat-icon>Code-life</span>
+         <span class="exapmle-spacer"></span>
+         <button mat-button color="accent" [routerLink]="['../../auth/login']" style="background-color: rgb(4, 238, 4);"
+            >Login</button>
+      </mat-toolbar>
+      <div class="icon">
+         <marquee direction="left" scrolldelay="3">
+            <h4 class="title">
+               <span class="title-word title-word-1"><img
+                     src="https://code.visualstudio.com/assets/images/code-stable-white.png" alt="" width="40px"></span>
+               <span class="title-word title-word-1"> This</span>
+               <span class="title-word title-word-2"> is</span>
+               <span class="title-word title-word-3"> Angular</span>
+               <span class="title-word title-word-4"> Website</span>
+            </h4>
+         </marquee>
+         <button type="button" class="thbtn  p-1 ms-2" (click)="myapplication()" data-mdb-tooltip-init
+            title="Hi! this is profile"><i class="fa fa-bars fa-1x"></i></button>
+      </div>
+
+      <router-outlet></router-outlet>
+      <app-footter class="fixed-end"></app-footter>
+   </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<div class="myapp m-0"  [ngStyle]="{'display':myapp}">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-lg-12 col-md-4 p-2 text-center">
+            <br>
+            <img class="bd-placeholder-img rounded-circle m-0 img-fluid" width="140" height="100"
+               src="../../.././assets/image/photo_2023-12-16_17-51-51-removebg-preview.png"  
+               role="img" preserveAspectRatio="xMidYMid slice" focusable="false" />
+            <h3 class="m-0 mb-1">Hey! I am <span class="text-danger">GURMEEET PRAJAPATI</span></h3>
+            <p class="m-0">I AM MEAN FULL-STACK DEVELOPER</p>
+            <div class="userful  mb-2 mt-1">
+               <a href="" class="text-white me-4 fa-2x">
+                   <i class="fa fa-instagram"></i>
+               </a>
+               <a href="" class="text-white me-4 fa-2x">
+                   <i class="fa fa-linkedin"></i>
+               </a>
+               <a href="" class="text-white me-4 fa-2x">
+                   <i class="fa fa-github"></i>
+               </a>
+           </div>
+            <P><img src="https://static.javatpoint.com/blog/images/mean-stack-developer1.png" alt="" class="img-fluid mt-1"></P>
+            <p><a class="btn btn-secondary "routerLink="/dashboard/landingpage/portfolio">View details »</a></p>
+         </div>
+          <div class="list-group ms-1 mt-0">
+            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+              My-project
+            </a>
+            <a href="https://rkfashion.netlify.app/" class="list-group-item list-group-item-action">rkfashion.netlify.app</a>
+            <a href="https://nodelife.netlify.app/" class="list-group-item list-group-item-action">nodelife.netlify.app</a>
+          </div>
+          <br>
+      </div>
+   </div>
+</div>
+
+
+
+<!-- 
+      <mat-toolbar color="primary">
+         <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>
+               menu
+            </mat-icon>
+         </button>
+         <span><mat-icon class="m-0">eco</mat-icon> Matrial ui tutorial</span>
+         <span class="exapmle-spacer"></span>
+         <button mat-button>menu</button>
+         <button [matMenuTriggerFor]="lvl1master" mat-button>menu</button>
+         <mat-menu #lvl1master="matMenu">
+            <button mat-menu-item>menu</button>
+            <button mat-menu-item>menu</button>
+         </mat-menu>
+         <button mat-button>menu</button>
+      </mat-toolbar>
+      <mat-drawer-container class="example-container" autosize>
+         <mat-drawer #drawer class="example-sidenav" mode="side">
+            <p>Auto-resizing sidenav</p>
+         </mat-drawer>
+         -->

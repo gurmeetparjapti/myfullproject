@@ -1,0 +1,64 @@
+
+
+
+
+
+<section>
+    <div class="container col-xl-4 bg-white">
+        <div class="shadow mt-5 body">
+            <div class="row">
+                <form [formGroup]="myform" (ngSubmit)="mysubmit()">
+                    <!-- Email input-->
+                    <div class="form-outline col-md-6 mt-3">
+                        <input type="text" formControlName="username" class="form-control border" required:required />
+                        <label class="form-label" for="form2Example1">User name</label>
+                    </div>
+                    <div class="form-outline col-md-6 mt-3">
+                        <input type="email" formControlName="email" class="form-control border" required/>
+                        <label class="form-label" for="form2Example1">Email address</label>
+                    </div>
+                    <!--Password input -->
+                    <div class="form-outline col-md-6 mt-3">
+                        <input type="text" formControlName="pass" class="form-control border"required />
+                        <label class="form-label" for="form2Example2">Password</label>
+                    </div>
+                    <!--2 column grid layout for inline styling-->
+                    <div class="row mb-4">
+                        <div class="col d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form- mt-3">
+                                <input class="form-check-input" type="checkbox" value="" formchecked />
+                                <label class="form-check-label" for="form2Example34"> Remember me / <a href="#!">Forgot
+                                        password?</a></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary  p-2 btn-block mb-4">Log in</button>
+                    <!-- Register buttons -->
+                    <div class="text-center">
+                        <p>Not a member? <a [routerLink]="['./register']">Register</a></p>
+                        <p>or sign up with:</p>
+                        <button type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fa fa-facebook-f"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fa fa-google"></i>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fa fa-twitter"></i>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fa fa-github"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class='air air1'></div>
+    <div class='air air2'></div>
+    <div class='air air3'></div>
+    <div class='air air4'></div>
+</section>

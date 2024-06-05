@@ -1,0 +1,36 @@
+
+
+<section>
+    
+
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-5">
+        <div class="col">
+            <div class="mb-3">
+                <h3 class="border text-center bg-warning">This is the Emplpyee id:{{record._id}}</h3>
+                <button class="btn btn-sm btn-success p-2 col-md-4"[routerLink]="['../../../apidata']" >back</button>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-body p-3">
+                    <h2 class="card_title">{{record._id}}</h2>
+                    <div class="card_text">
+                        <p> NAME:- {{record.username | uppercase}}</p>
+                        <p> Gmail:- {{record.email}} </p>
+                        <p> DOB:- {{record.age | date}} </p>
+                        <p>PHONE NO:- {{record.phone}}</p>
+                        <p>PASSWORD:- {{record.pass}}</p>
+                        <p>ADDRESS:- {{record.address}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class='air air1'></div>
+    <div class='air air2'></div>
+    <div class='air air3'></div>
+    <div class='air air4'></div>
+  </section>

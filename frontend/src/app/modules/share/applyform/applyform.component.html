@@ -1,0 +1,135 @@
+<div class="container g-0 mb-4">
+    <div class="row g-0 justify-content-center ">
+        <div class="col-lg-4 col-md-4 mylobby text-center  me-4 g-0">
+            <br><br>
+            <h2 class="fw-bold m-0">We are avliable <span class="text-danger">24/7</span></h2>
+            <hr class="mb-4 m-0 d-inline-block mx-auto text-center"
+                style="width: 100px; background-color: #4dd5ff; height: 4px" />
+            <p></p>
+            <p><i class="fa fa-volume-control-phone" aria-hidden="true"></i> +91 730 3505 699</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i> Kumargurmeet096@gmail.com</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i> codeLife.com</p>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i> Noida sec-62 Block-D Code-life</p>
+            <div class="userful">
+                <a href="" class="me-4 rounded-circle">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="" class="me-4 rounded-circle">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 rounded-circle">
+                    <i class="fa fa-google"></i>
+                </a>
+                <a href="" class="me-4 rounded-circle">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 rounded-circle">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </div>
+            <br>
+        </div>
+        <div class="col-lg-6 col-md-4 contact g-0">
+            <div class="row formsabel g-0">
+                <form [formGroup]="myform" (ngSubmit)="submitform()" class="g-0 contact justify-content-center">
+                    <div class="container-fluid pic border p-3 shadow">
+                        <div class="row">
+                            <!------firstname----->
+                            <div class="col-md-6 mt-2">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control g-0 " formControlName="firstname"
+                                    [ngClass]="{'is-invalid':submitted && f.firstname.errors}" />
+                                <section *ngIf="submitted && f.firstname.errors" class="errormsg">
+                                    <div *ngIf="f.firstname.errors.required" class="g-0 err">firstname not required
+                                    </div>
+                                    <!-- <div *ngIf="f.firstname.errors.minlength" class="g-0 err">
+                                        Username must be at least 10 characters
+                                    </div> -->
+                                    <div *ngIf="f.firstname.errors.maxlength" class="g-0 err">
+                                        Username must not exceed 15 characters
+                                    </div>
+                                    <div *ngIf="f.firstname.errors.pattern" class="g-0 err">
+                                        Plese Enter the valid Name
+                                    </div>
+                                </section>
+                                <!------lastname----->
+                            </div>
+                            <div class="col-md-6 mt-2">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" formControlName="lastname"
+                                    [ngClass]="{'is-invalid':submitted && f.lastname.errors}" />
+                                <section *ngIf="submitted && f.lastname.errors" class="errormsg">
+                                    <div *ngIf="f.lastname.errors.required" class="g-0 err">Lastname not required</div>
+                                    <!-- <div *ngIf="f.lastname.errors.minlength" class="g-0 err">
+                                        Username must be at least 10 characters
+                                    </div> -->
+                                    <div *ngIf="f.lastname.errors.maxlength" class="g-0 err">
+                                        Username must not exceed 15 characters
+                                    </div>
+                                    <div *ngIf="f.lastname.errors.pattern" class="g-0 err">
+                                        Plese Enter the valid Name
+                                    </div>
+                                </section>
+                            </div>
+                            <!------===email section====-->
+                            <div class="col-md-6 mt-2">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" formControlName="email"
+                                    [ngClass]="{'is-invalid':submitted && f.email.errors}" />
+                                <div *ngIf="submitted && f.email.errors">
+                                    <section *ngIf="submitted && f.email.errors" class="errormsg">
+                                        <div *ngIf="f.email.errors.required" class="g-0 err">Email not required</div>
+                                        <div *ngIf="f.email.errors.pattern" class="g-0 err">
+                                            please enter the valid Email
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-2">
+                                <label class="form-label">Phone no</label>
+                                <input type="text" class="form-control" formControlName="phone"
+                                    [ngClass]="{'is-invalid':submitted && f.phone.errors}">
+                                <section *ngIf="submitted && f.phone.errors" class="errormsg">
+                                    <div *ngIf="f.phone.errors.required" class="g-0 err">Phone'no not required</div>
+                                    <div *ngIf="f.phone.errors.maxlength" class="g-0 err">
+                                        Username must be at least 10 characters
+                                    </div>
+                                    <div *ngIf="f.phone.errors.pattern" class="g-0 err">
+                                        Enter the valid No
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="row justify-content-center text-center">
+                                <div class="form-group col-md-4 col-lg-6 mt-2">
+                                    <label class="form-label">Applying-post</label>
+                                    <select class="form-select" aria-label="Default select example" placeholder="select"
+                                        [ngClass]="{'is-invalid':submitted && f.course.errors}" formControlName="course">
+                                        <option>Applying-post</option>
+                                        <option *ngFor="let option of options">{{option.name}}</option>
+    
+                                    </select>
+    
+                                    <section *ngIf="submitted && f.course.errors" class="errormsg mt-1">
+                                        <div *ngIf="f.course.errors.required" class="g-0 err">Phone'no not required</div>
+                                        <div *ngIf="f.course.errors.maxlength" class="g-0 err">
+                                            Username must be at least 50 characters
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <!----------input field end-------------->
+                            <div class="col-md-4 mt-5 text-center col-lg-12  btn-5 justify-content-center">
+                                <button type="button" class="btn btn-success me-3" (click)="submitform()">submit
+                                    Data
+                                </button>
+                            </div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <br><br>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+<div class="container g-0 ">
+    <div class="row center p-5 justify-content-center">
+        <div class="col-md-6 ms-2 g-0 ">
+            <form [formGroup]="myform" (ngSubmit)="submitform()">
+                <div class="container pic border p-3 shadow">
+                    <div class="row">
+                        <!------------Name section --------------->
+                        <div class="col-md-6 mt-2">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control g-0" formControlName="username"
+                                placeholder="Username" [ngClass]="{'is-invalid':submitted && f.username.errors}" />
+                            <section *ngIf="submitted && f.username.errors" class="errormsg">
+                                <div *ngIf="f.username.errors.required" class="g-0 err">firstname not required</div>
+                                <!-- <div *ngIf="f.firstname.errors.minlength" class="g-0 err">
+                                        Username must be at least 10 characters
+                                    </div> -->
+                                <div *ngIf="f.username.errors.maxlength" class="g-0 err">
+                                    Username must not exceed 15 characters
+                                </div>
+                                <div *ngIf="f.username.errors.pattern" class="g-0 err">
+                                    Plese Enter the valid Name
+                                </div>
+                            </section>
+                        </div>
+                        <!----------------Email validation-------------->
+                        <div class="col-md-6 mt-2">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" formControlName="email" placeholder="Email"
+                                [ngClass]="{'is-invalid':submitted && f.email.errors}">
+                            <div *ngIf="submitted && f.email.errors">
+                                <section *ngIf="submitted && f.email.errors" class="errormsg">
+                                    <div *ngIf="f.email.errors.required" class="g-0 err">Email not required</div>
+                                    <div *ngIf="f.email.errors.pattern" class="g-0 err">
+                                        please enter the valid Email
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <!-----------Age section -------->
+                        <div class="col-md-6 mt-2">
+                            <label class="form-label">Age</label>
+                            <input type="date" class="form-control age" formControlName="age" placeholder="Age"
+                                [ngClass]="{'is-invalid':submitted && f.age.errors}">
+                            <section *ngIf="submitted && f.age.errors" class="errormsg">
+                                <div *ngIf="f.age.errors.required" class="g-0 err">DOB not required</div>
+                            </section>
+                        </div>
+                        <!------------Phone section------------>
+                        <div class="col-md-6 mt-2">
+                            <label class="form-label">Phone no</label>
+                            <input type="text" class="form-control" formControlName="phone" placeholder="Phone no"
+                                [ngClass]="{'is-invalid':submitted && f.phone.errors}">
+                            <section *ngIf="submitted && f.phone.errors" class="errormsg">
+                                <div *ngIf="f.phone.errors.required" class="g-0 err">Phone not required</div>
+                                <div *ngIf="f.phone.errors.maxlength" class="g-0 err">
+                                    Username must be at least 10 characters
+                                </div>
+                                <div *ngIf="f.phone.errors.pattern" class="g-0 err">
+                                    Enter the valid No
+                                </div>
+                            </section>
+                        </div>
+                        <!--------------Address section--------->
+                        <div class="col-md-6 mt-2">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" formControlName="address" placeholder="Address"
+                                [ngClass]="{'is-invalid':submitted && f.address.errors}">
+                            <section *ngIf="submitted && f.address.errors" class="errormsg">
+                                <div *ngIf="f.address.errors.required" class="g-0 err">Address not required</div>
+                                <div *ngIf="f.address.errors.maxlength" class="g-0 err">
+                                    Username must be at least 50 characters
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-6 mt-2">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" formControlName="pass" placeholder="Password"
+                                [ngClass]="{'is-invalid':submitted && f.pass.errors}">
+                            <section *ngIf="submitted && f.pass.errors" class="errormsg">
+                                <div *ngIf="f.pass.errors.required" class="g-0 err">Address not required</div>
+                                <div *ngIf="f.pass.errors.maxlength" class="g-0 err">
+                                    Username must be at least 50 characters
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12 mt-3 text-center ">
+                            <button type="submit" class="btn btn-success action me-3 " style="padding: 5px !important;
+                            width: 130px;">Registor</button>
+                            <button type="button" [routerLink]="['../../../auth']" class="btn btn-danger action" style="padding: 5px !important;
+                            width: 130px;">login</button>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <p>Not a member? <a routerLink="Register">Loginpage</a></p>
+                        <p>or sign up with:</p>
+                        <button type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fa fa-facebook-f"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fa fa-google"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fa fa-twitter"></i>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-floating mx-1">
+                            <i class="fa fa-github"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4 col-lg-4 g-0 py-lg-3 bg-white border content_image">
+            <h1 class="fw-bold fs-2 text-center text-info">Welcome to Code-life</h1>
+            <hr class="">
+
+        </div>
+    </div>
+</div>

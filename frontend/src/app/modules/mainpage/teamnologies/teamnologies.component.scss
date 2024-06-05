@@ -1,0 +1,58 @@
+
+
+.clip-path{
+    clip-path: polygon(49% 75%, 100% 15%, 101% 125%, 0% 100%, 0 21%);
+    height: 100vh;
+}
+.clip-img{
+    background-image: url('https://wallpaperaccess.com/full/268543.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.text-content{
+    position: relative;
+    top: 0px ;
+    z-index: 99;
+}
+
+
+@media (max-width:500px) {
+    .clip-path{
+      clip-path: polygon(51% 81%, 202% 15%, 86% 178%, -1% 101%, 0 64%);
+      height: 50vh;
+    }
+}
+
+
+
+p{
+  font-family: "Roboto", sans-serif;
+
+}
+
+
+
+
+
+
+
+.headimage {
+    height: 500px !important;
+}
+
+.Tittle_team::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(#1a1a1a, #1560bd);
+}
+.Tittle_team {
+    position: relative;
+    margin: 0 auto;
+  }
+
+
